@@ -5,7 +5,7 @@ mysql_connect($dbhost, $dbuser, $dbpasswd);
 mysql_select_db($dbname);
 //подключение шаблонизатора
 
-require "Classes/Template.php";
+require __DIR__."/Classes/Template.php";
 //открытие шаблона
 $tpl->get_tpl('page.tpl');
 
@@ -13,20 +13,16 @@ $tpl->get_tpl('page.tpl');
 $tpl->set_value('TITLE', $title);
 $tpl->set_value('DESCRIPTION', $description);
 $tpl->set_value('INFO', $info);
-//меню
-$menu = "
-    <br>Пункт 1
-    <br>Пункт 2
-    <br>Пункт 3";
+//подключение меню
+include __DIR__."/Scripts/menu.php";
 $tpl->set_value('MENU', $menu);
-//вывод главной страницы
-if (!isset($p)) {
-    $page  = "Главная страница";
-    $tpl->set_value('PAGE', $page);
-}
+
+//подключение вывода страниц
+include __DIR__."/Scripts/page.php";
+$tpl->set_value('PAGE', $page);
+
 
 //парсинг шаблона
 $tpl->tpl_parse();
-
 //вывод html
 echo $tpl->html;
