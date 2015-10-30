@@ -3,14 +3,16 @@
 class Template {
     public $values = array();
     public $html;
+    public $path;
 
     //метод загрузки шаблона
     public function get_tpl($tpl_name)
     {
-        if(empty($tpl_name) || !file_exists($tpl_name)){
+        $this->path = $_SERVER["DOCUMENT_ROOT"].'/Views/'.$tpl_name;
+        if(empty($this->path) || !file_exists($this->path)){
             return false;
         } else {
-            $this->html = file_get_contents($tpl_name);
+            $this->html = file_get_contents($this->path);
         }
     }
     //метод установки значений
