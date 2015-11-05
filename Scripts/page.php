@@ -70,13 +70,17 @@ if (!isset($_GET['p'])) {
         $page = $page . "<p><center><a name=down></a><a href=#top>Вверх</a></center><p>";
     }
     else $page = $page . "<h1>Нет такой страницы</h1>";
-} elseif ($_GET['p'] = "static") {
+} elseif ($_GET['p'] == "static") {
     $id = @htmlspecialchars($_GET["id"]);
     $id = @strip_tags($id);
-
     $q = "select * from static where id = '$id' limit 1";
     $r = mysql_query($q) or die(mysql_error());
 
     $row = mysql_fetch_array($r);
     $page = $row["content"];
+} elseif ($_GET['p'] == "file") {
+    $f = $_SERVER["DOCUMENT_ROOT"]."/Views/" .$_GET['f'] . ".html";
+    if (file_exists($f)) {
+        $page = file_get_contents($f);
+    } else echo 'Нет такого файла';
 }
