@@ -13,7 +13,12 @@ $tpl->get_tpl('page.tpl');
 $tpl->set_value('TITLE', $title);
 $tpl->set_value('DESCRIPTION', $description);
 $tpl->set_value('INFO', $info);
-//подключение меню
+
+//подключение верхнего меню
+include __DIR__."/Scripts/top_menu.php";
+$tpl->set_value('TOP_MENU', $top_menu);
+
+//подключение левого меню
 include __DIR__."/Scripts/menu.php";
 $tpl->set_value('MENU', $menu);
 
