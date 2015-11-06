@@ -9,6 +9,8 @@ mysql_query("SET NAMES 'utf8'");
 $N = 5;
 echo "<h1>Добро пожаловать в гостевую книгу!</h1>";
 
+echo "<a href = '/'>На главную</a>". "<br>";
+
 $r1 = mysql_query("select count(*) as res from gb where apr=1");
 $f = mysql_fetch_row($r1);
 $res = $f[0];

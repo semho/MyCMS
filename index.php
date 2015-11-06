@@ -26,8 +26,6 @@ $tpl->set_value('MENU', $menu);
 include __DIR__."/Scripts/page.php";
 $tpl->set_value('PAGE', $page);
 
-//echo file_get_contents($_SERVER["DOCUMENT_ROOT"].'/gallery_show.php');
-
 //парсинг шаблона
 $tpl->tpl_parse();
 //вывод html

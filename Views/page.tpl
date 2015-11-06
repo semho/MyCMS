@@ -11,6 +11,7 @@
                 {TOP_MENU}
                 <a href="index.php?p=file&f=about">О нас</a>
                 <a href="index.php?p=gallery&f=gallery_show">Галерея</a>
+                <a href="gb_show.php">Гостевая книга</a>
             </td>
         </tr>
         <tr>
