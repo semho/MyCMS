@@ -7,7 +7,11 @@
     {DESCRIPTION}
     <table border="0" width="100%" cellpadding="4" cellspacing="0">
         <tr>
-            <td colspan="2" width="100%" valign="top" align="center" class="top_menu">{TOP_MENU}<a href="index.php?p=file&f=about">О нас</a></td>
+            <td colspan="2" width="100%" valign="top" align="center" class="top_menu">
+                {TOP_MENU}
+                <a href="index.php?p=file&f=about">О нас</a>
+                <a href="index.php?p=gallery&f=gallery_show">Галерея</a>
+            </td>
         </tr>
         <tr>
             <td width="40%" valign="top">{MENU}</td>

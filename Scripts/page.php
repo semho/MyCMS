@@ -83,4 +83,10 @@ if (!isset($_GET['p'])) {
     if (file_exists($f)) {
         $page = file_get_contents($f);
     } else echo 'Нет такого файла';
+}elseif ($_GET['p'] == "gallery") {
+    $f = $_SERVER["DOCUMENT_ROOT"] . "/" . $_GET['f'] . ".php";
+    if (file_exists($f)) {
+        //$page = file_get_contents($f);
+        include $_SERVER["DOCUMENT_ROOT"]."/gallery_show.php";
+    } else echo 'Нет такой страницы';
 }
