@@ -3,6 +3,7 @@ require 'config.php';
 
 mysql_connect($dbhost, $dbuser, $dbpasswd);
 mysql_select_db($dbname);
+mysql_query("SET NAMES 'utf8'");
 $id = @htmlspecialchars($_GET['id']);
 $id = @strip_tags($id);
 

@@ -3,6 +3,7 @@ require "config.php";
 //подключение к серверу БД
 mysql_connect($dbhost, $dbuser, $dbpasswd);
 mysql_select_db($dbname);
+mysql_query("SET NAMES 'utf8'");
 //подключение шаблонизатора
 
 require __DIR__."/Classes/Template.php";
