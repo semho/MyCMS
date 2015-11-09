@@ -19,6 +19,6 @@
             <td width="60%" valign="top">{PAGE}</td>
         </tr>
     </table>
-    {INFO}
+    {INFO}<img src="/Scripts/counter.php">
 </body>
 </html>
